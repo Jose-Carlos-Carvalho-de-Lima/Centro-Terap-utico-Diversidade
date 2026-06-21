@@ -1,0 +1,66 @@
+/* Definição das cores baseadas na logo do cliente */
+:root {
+    --azul-principal: #1A5276;    /* Tom de azul profissional e confiável */
+    --verde-suave: #27AE60;       /* Verde saúde/equilíbrio */
+    --amarelo-destaque: #F39C12;  /* Amarelo acolhedor */
+    --cinza-fundo: #F8F9FA;       /* Fundo claro para leitura limpa */
+}
+
+/* Configurações da Barra de Navegação */
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 3px solid var(--azul-principal);
+}
+
+.texto-azul-principal {
+    color: var(--azul-principal) !important;
+}
+
+/* Seção do Banner Principal */
+.hero-section {
+    background: linear-gradient(135deg, #ffffff 0%, var(--cinza-fundo) 100%);
+    padding: 80px 0;
+}
+
+/* Estilização dos Botões */
+.btn-principal {
+    background-color: var(--azul-principal);
+    color: #ffffff;
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-principal:hover {
+    background-color: #113f5e;
+    color: #ffffff;
+}
+
+/* Estilização dos Cards (Inspirados no Layout) */
+.card-servico {
+    border: none;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-servico:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Bordas coloridas representando a diversidade da logo nos cards */
+.borda-azul { 
+    border-top: 5px solid var(--azul-principal); 
+}
+
+.borda-verde { 
+    border-top: 5px solid var(--verde-suave); 
+}
+
+.borda-amarelo { 
+    border-top: 5px solid var(--amarelo-destaque); 
+}
