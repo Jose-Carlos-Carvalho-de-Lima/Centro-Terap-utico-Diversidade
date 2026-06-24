@@ -5,21 +5,61 @@
     --amarelo-destaque: #F39C12;  /* Amarelo acolhedor */
     --cinza-fundo: #F8F9FA;       /* Fundo claro para leitura limpa */
 }
-
-/* Configurações da Barra de Navegação */
-.navbar {
-    background-color: #ffffff;
-    border-bottom: 3px solid var(--azul-principal);
+/* Configurações do cabeçalho*/
+header {
+    display: flex;
+    justify-content: center; /* Centraliza na horizontal */
+    align-items: center;
+    width: 100%;
+    height: auto;
 }
-
-.texto-azul-principal {
+.logo img {
+    display: flex;
+    justify-content: center; 
+    height: 300px;
+    object-fit: cover; 
+}
+.texto-principal{
+    display: flex;
+    justify-content: center; /* Centraliza na horizontal */
+    align-items: center;
+}
+.texto-principal {
     color: var(--azul-principal) !important;
+    font-size: 2rem;
+    margin: 10px;
+    text-align: right;
 }
-
+.texto-principal a {
+    text-decoration: none;
+}
+/* Configurações da Barra de Navegação */
+nav {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    border: 3px solid red;
+}
+nav .barra-menu .item-menu ul{
+    display: flex;
+}
 /* Seção do Banner Principal */
 .hero-section {
     background: linear-gradient(135deg, #ffffff 0%, var(--cinza-fundo) 100%);
     padding: 80px 0;
+
+}
+/* Configurações da Barra de Navegação */
+.sub-menu {
+ list-style: none;
+}
+.sub-menu{
+    display: none;
+}
+
+li:hover .sub-menu {
+    display: block;
 }
 
 /* Estilização dos Botões */
