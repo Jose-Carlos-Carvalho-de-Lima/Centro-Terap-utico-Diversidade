@@ -4,64 +4,162 @@
     --verde-suave: #27AE60;       /* Verde saúde/equilíbrio */
     --amarelo-destaque: #F39C12;  /* Amarelo acolhedor */
     --cinza-fundo: #F8F9FA;       /* Fundo claro para leitura limpa */
+    --branco-texto:#ffffff;      /* Cor do texto para botões*/
+    --preto-texto-menu:#333333;  /* Cor do texto do menu */
+    --azul-facebook :#1877F2;   /* cor de fundo do icone do facabook*/
+    
 }
-/* Configurações do cabeçalho*/
-header {
-    display: flex;
-    justify-content: center; /* Centraliza na horizontal */
-    align-items: center;
-    width: 100%;
-    height: auto;
-}
-.logo img {
-    display: flex;
-    justify-content: center; 
-    height: 300px;
-    object-fit: cover; 
-}
-.texto-principal{
-    display: flex;
-    justify-content: center; /* Centraliza na horizontal */
-    align-items: center;
-}
-.texto-principal {
-    color: var(--azul-principal) !important;
-    font-size: 2rem;
-    margin: 10px;
-    text-align: right;
-}
-.texto-principal a {
-    text-decoration: none;
-}
-/* Configurações da Barra de Navegação */
-nav {
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 50px;
-    border: 3px solid red;
-}
-nav .barra-menu .item-menu ul{
-    display: flex;
-}
-/* Seção do Banner Principal */
-.hero-section {
-    background: linear-gradient(135deg, #ffffff 0%, var(--cinza-fundo) 100%);
-    padding: 80px 0;
 
+body{
+    background-color: var(--cinza-fundo);
 }
 /* Configurações da Barra de Navegação */
-.sub-menu {
- list-style: none;
+.barra_menu{
+    display: flex;            /* Ativa o modo flexível */
+    justify-content:flex-start;  /* Centraliza todos os itens na horizontal no inicio */
+    position: absolute;  /* Faz o menu flutuar sobre o conteúdo abaixo */
+    top: 0;              /* Cola o menu no topo do container */
+    left: 0;
+    width: 100%;         /* Garante que o menu ocupe toda a largura */
+    z-index: 10;         /* Um número alto para garantir que fique NA FRENTE de tudo */
+    padding: 10px 0;     /* Espaço interno para o menu respirar */
 }
-.sub-menu{
+.item_menu {
+    display: flex;            /* Ativa o modo flexível */
+    list-style: none;         /* Remove as bolinhas/pontos da lista */
+    margin: 0;
+    padding: 0;
+    gap: 50px;                /* Cria um espaçamento automático entre os links */
+    margin-top: 10px;
+    padding-left: 150px;
+}
+.item_menu a {
+    text-decoration: none;    /* Remove o sublinhado padrão */
+    color:var(--branco-texto);           /* Cor do texto do menu */
+    font-weight: 500;
+    transition: color 0.01ms;
+}.item_menu li{
+    position: relative; /* O submenu vai se alinhar com base neste item */
+}
+.item_menu :hover{
+    color: var(--amarelo-destaque);
+}
+/* Configurações do submenu */
+.sub_menu{
+    position: absolute;
+    top: 100%;             /* Cola o submenu logo abaixo do texto do menu pai */
+    left: 50%;             /* Move para o meio */
+    transform: translateX(-50%); /* Centraliza perfeitamente o bloco do submenu*/ 
+    list-style: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.sub_menu li a{
+    display: block;
+    padding: 8px 20px;
+    color: var(--branco-texto);
+    font-weight: 400;
+    text-shadow: none;     /* Remove a sombra do menu principal se houver */
+    transition: background 0.2s;
+    text-align: left; /* Alinha o texto dos itens para a esquerda */
+}
+.sub_menu{
     display: none;
 }
 
-li:hover .sub-menu {
+li:hover .sub_menu {
     display: block;
 }
 
+/* Estilo do Botão de agendamento*/
+#btnAgendar {
+    margin-left: 1100px;
+    margin-top: -50px;
+    background-color: var(--azul-principal);
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+}
+
+#btnAgendar:hover {
+    background-color:var(--azul-facebook);
+}
+
+/* Configurações do Banner Principal */
+.hero-section {
+    background: linear-gradient(135deg, #684efa 0%, var(--cinza-fundo) 100%);
+    padding: 80px 0;
+}
+.banner_segundario{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.banner_segundario .texto_banner{
+    margin-bottom: 150px;
+}
+.banner_segundario .texto_banner h1 {
+    width: 100%;             
+    margin-bottom: 1.5rem;   
+    float: left; 
+    color: var(--cinza-fundo);           
+}
+.banner_segundario .texto_banner p{
+    font-size: 1.25rem;       
+    font-weight: 300;        
+    color: var(--azul-principal);         
+}
+.botao_banner {
+    display: inline-block;
+    margin-left: 150px;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: 0.3rem;             /* Cantos levemente arredondados */
+    transition: all 0.2s ease-in-out;  /* Efeito suave ao passar o mouse */
+     
+    /* --- TAMANHO GRANDE (.btn-lg) --- */
+    padding: 0.5rem 1rem;            /* Espaçamento interno (Cima/Baixo e Lados) */
+    font-size: 1.25rem;                /* Texto maior (Aproximadamente 20px) */
+
+    /* --- ESTILO E CORES (.btn-principal) --- */
+    background-color: var(--azul-principal);         /* Cor de fundo  */
+}
+/* Efeito ao passar o mouse por cima (botão) */
+.botao_banner{
+    display: inline-block;
+    margin-left: 150px;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: 0.3rem;             /* Cantos levemente arredondados */
+    transition: all 0.2s ease-in-out;  /* Efeito suave ao passar o mouse */
+     
+    /* --- TAMANHO GRANDE (.btn-lg) --- */
+    padding: 0.5rem 1rem;            /* Espaçamento interno (Cima/Baixo e Lados) */
+    font-size: 1.25rem;                /* Texto maior (Aproximadamente 20px) */
+
+    /* --- ESTILO E CORES (.btn-principal) --- */
+    background-color: var(--azul-principal);
+} 
+.botao_banner:hover{
+    background-color: var(--azul-facebook);
+}
+.botao_banner a{ 
+    color: var(--branco-texto);
+    text-decoration:none;             /* Remove sublinhado se for um link <a> */
+}
 /* Estilização dos Botões */
 .btn-principal {
     background-color: var(--azul-principal);
@@ -77,30 +175,116 @@ li:hover .sub-menu {
     background-color: #113f5e;
     color: #ffffff;
 }
-
-/* Estilização dos Cards (Inspirados no Layout) */
-.card-servico {
-    border: none;
-    border-radius: 15px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.imagem_banner{
+    
+    
+}
+.imagem_banner img{
+    width: 100%;
+}
+/* Alinhamento do container de cards */
+#secao-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+    background-color: var(--cinza-fundo);
 }
 
-.card-servico:hover {
+article {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+article:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Bordas coloridas representando a diversidade da logo nos cards */
-.borda-azul { 
-    border-top: 5px solid var(--azul-principal); 
+article h3 {
+    margin-bottom: 15px;
+    font-size: 1.25rem;
 }
 
-.borda-verde { 
-    border-top: 5px solid var(--verde-suave); 
+article p {
+    color: var(--texto-secundario);
+    line-height: 1.5;
 }
 
-.borda-amarelo { 
-    border-top: 5px solid var(--amarelo-destaque); 
+/* Customização das cores exclusivas dos cards usando ID */
+#card-azul {
+    border-top: 5px solid var(--azul-principal);
+}
+
+#card-verde {
+    border-top: 5px solid var(--verde-suave);
+}
+
+#card-amarelo {
+    border-top: 5px solid var(--amarelo-destaque);
+}
+
+/* Rodapé */
+footer  {
+    background-color: var(--azul-principal);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+footer a{
+    color: white;
+}
+footer > p {
+    margin: 5px;
+    
+}
+
+footer .social-icons i {
+    margin: 0 20px;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+#whatsapp:hover{
+    border-radius: 15%;
+    background-color: #25D366;
+}
+
+#facebook:hover{
+    border-radius: 15%;
+    background: linear-gradient(180deg, #18A7F2 0%, #0666EB 100%);
+}
+
+#instagram:hover{
+  border-radius: 15%;
+  background: #fdf497;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+}
+
+#youtube:hover{
+     border-radius: 15%;
+    background-color: #FF0000;
+}
+/* RESPONSIVIDADE (MOBILE) */
+@media (max-width: 768px) {
+    nav > div, header > div {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #secao-cards {
+        grid-template-columns: 1fr;
+    }
 }
