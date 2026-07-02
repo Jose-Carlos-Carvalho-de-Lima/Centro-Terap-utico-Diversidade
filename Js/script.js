@@ -1,22 +1,21 @@
-// Aguarda o HTML carregar completamente antes de rodar o código
 document.addEventListener("DOMContentLoaded", function () {
-
-    // Seleciona o botão de agendamento pelo ID
+    // Botão de agendamento
     const botaoAgendar = document.getElementById("btnAgendar");
-
-    // Verifica se o botão realmente existe na página
     if (botaoAgendar) {
-        // Adiciona um evento de clique
         botaoAgendar.addEventListener("click", function () {
-            alert("Olá! O sistema de agendamento está sendo integrado ao servidor Django. Em breve você poderá marcar sua consulta!");
+            window.open("https://wa.me/5521968250101?text=Olá! Gostaria de agendar uma consulta.", "_blank");
         });
     }
 
-    const hamburger = document.getElementById('hamburger');
-    const menu = document.getElementById('menu');
+    // Menu hambúrguer (mobile)
+    const hamburger = document.getElementById("hamburger");
+    const menu = document.getElementById("menu");
 
-    hamburger.addEventListener('click', () => {
-        menu.classList.toggle('active');
-    });
-
+    if (hamburger && menu) {
+        hamburger.addEventListener("click", () => {
+            menu.classList.toggle("active");
+        });
+    }
+    
+  
 });
