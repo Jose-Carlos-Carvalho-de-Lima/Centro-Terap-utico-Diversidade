@@ -13,9 +13,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (hamburger && menu) {
         hamburger.addEventListener("click", () => {
-            menu.classList.toggle("active");
+            const isActive = menu.classList.toggle("active");
+            hamburger.setAttribute("aria-expanded", isActive);
         });
     }
-    
-  
+
+    // Submenus
+    const subMenus = document.querySelectorAll(".item_menu > li");
+
+    subMenus.forEach(item => {
+        const link = item.querySelector(":scope > a"); // pega apenas o <a> direto do li
+        if (link) {
+            link.addEventListener("click", function (e) {
+                e.preventDefault(); // evita recarregar página
+                // Fecha todos os outros submenus
+                subMenus.forEach(i => {
+                    if (i !== item) i.classList.remove("open");
+                });
+                // Alterna o submenu clicado
+                item.classList.toggle("open");
+            });
+        }
+    });
+
+    // Fecha submenus ao clicar fora
+    document.addEventListener("click", function (e) {
+        subMenus.forEach(item => {
+            if (!item.contains(e.target)) {
+                item.classList.remove("open");
+            }
+        });
+    });
 });
