@@ -202,10 +202,21 @@ footer .social-icons i {
     cursor: pointer;
 }
 
-#whatsapp:hover { background-color: #25D366; border-radius: 15%; }
-#facebook:hover { background: linear-gradient(180deg, #18A7F2 0%, #0666EB 100%); border-radius: 15%; }
-#instagram:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%); border-radius: 15%; }
-#youtube:hover { background-color: #FF0000; border-radius: 15%; }
+#whatsapp:hover { 
+    background-color: #25D366; 
+    border-radius: 15%; }
+#facebook:hover { 
+    background-color: white;
+    border-radius: 15%; 
+}
+#instagram:hover { 
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+    border-radius: 15%; 
+}
+#youtube:hover { 
+   color: #fd5949;
+    border-radius: 15%; 
+}
 
 /* Responsividade */
 @media (max-width: 768px) {
