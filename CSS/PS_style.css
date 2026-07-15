@@ -50,7 +50,7 @@ header h1 {
 }
 
 /* Seções Principais */
-main, footer {
+main{
     max-width: 1000px;
     margin: 0 auto;
     padding: 30px 20px;
@@ -108,15 +108,57 @@ blockquote {
 
 /* Rodapé */
 footer {
+    background-color: var(--azul-confianca);
     text-align: center;
-    border-top: 1px solid #ddd;
-    margin-top: 40px;
+    padding: 20px;
+    margin-top: 10px;
 }
-
-#redes-sociais a {
-    color: var(--azul-confianca);
-    font-weight: bold;
-    text-decoration: none;
+footer p{
+    margin: 10px;
+    font-size: 15px;
+    color: var(--branco);
+}
+footer .social-icons i {
+    width: 40px;
+    height: 40px;
+    margin: 0 20px;
+    font-size: 35px;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    cursor: pointer;
+}
+#whatsapp{
+    color: blue;
+}
+#whatsapp:hover { 
+    background-color: #25D366;
+    color: #eee; 
+    border-radius: 15%; 
+}
+#facebook{
+    color:blue;
+}
+#facebook:hover { 
+    background-color:  rgb(6, 22, 247);
+    color: #eee;
+    border-radius: 15%; 
+}
+#instagram{
+    color:blue;
+}
+#instagram:hover { 
+    color: #eee;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+    border-radius: 15%;
+}
+#youtube{
+    color: blue;
+}
+#youtube:hover { 
+    color: #eee;
+    background-color: red;
+    border-radius: 15%; 
 }
 
 /* --- RESPONSIVIDADE (Telas de Celular) --- */
