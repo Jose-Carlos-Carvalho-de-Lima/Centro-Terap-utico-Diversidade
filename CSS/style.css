@@ -93,8 +93,8 @@ body {
 
 /* Botão de agendamento */
 #btnAgendar {
-    margin-left: auto;
-    background-color: var(--azul-principal);
+    margin-left: 510px;
+    background-color: var(--verde-suave);
     color: var(--branco-texto);
     border: none;
     border-radius: 30px;
@@ -195,6 +195,9 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 10px;
+    align-items: center;
+    align-content: center;
+    
 }
 
 footer .social-icons i {
@@ -214,8 +217,10 @@ footer .social-icons i {
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
     border-radius: 15%; 
 }
+
 #youtube:hover { 
-   color: #fd5949;
+    color: #FF0000;
+    background-color: white;
     border-radius: 15%; 
 }
 
